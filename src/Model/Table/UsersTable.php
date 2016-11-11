@@ -54,7 +54,7 @@ class UsersTable extends Table
         $this->hasMany('Polls', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('UserProfiles', [
+        $this->hasOne('UserProfiles', [
             'foreignKey' => 'user_id'
         ]);
     }

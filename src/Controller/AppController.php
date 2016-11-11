@@ -48,14 +48,16 @@ class AppController extends Controller
                 'Form' => [
                     'fields' => [
                         'username' => 'email',
-                        'password' => 'password'
-                    ]
+                        'password' => 'password',
+                    ],
+                    'userModel' => 'Users',
                 ]
             ],
             'loginAction' => [
                 'controller' => 'Users',
-                'action' => 'login'
+                'action' => 'login',
             ],
+            'storage' => 'Session',
             'unauthorizedRedirect' => $this->referer() // If unauthorized, return them to page they were just on
         ]);
         $this->Auth->allow(['display']);

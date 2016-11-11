@@ -14,7 +14,7 @@
         'style.css',
         '../font-awesome/css/font-awesome',
     ]) ?>
-    <?= $this->Html->css([
+    <?= $this->Html->script([
         'jquery-2.1.1.js',
         'bootstrap.min.js',
     ]) ?>
