@@ -54,6 +54,7 @@ class AppController extends Controller
                 ]
             ],
             'loginAction' => [
+                'plugin' => null,
                 'controller' => 'Users',
                 'action' => 'login',
             ],

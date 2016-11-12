@@ -75,6 +75,16 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
+Router::plugin('Dashboard', ['path' => '/dashboard'], function (RouteBuilder $routes) {
+    $routes->connect('/:controller');
+});
+
+Router::prefix('admin', function (RouteBuilder $routes) {
+    $routes->plugin('Dashboard', function (RouteBuilder $routes) {
+        $routes->connect('/:controller');
+    });
+});
+
 /**
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.
